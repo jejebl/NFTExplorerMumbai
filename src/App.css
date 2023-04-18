@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.home_container {
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  background: linear-gradient(to right, black,10%, aqua, 90%, black);
+}
+.title_container {
+  margin-top: 100px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background-color: black;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 20px;
+}
+.title {
+  font-size: 28px;
+  font-weight: 600;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.input_wallet_collection_container {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.label_wallet, .label_collection {
+  font-size: 26px;
+  margin-bottom: 1rem;
+}
+.input {
+  border: none;
+  border-radius: 5px;
+  padding: 4px 8px;
+  width: 600px;
+  font-size: 16px;
+}
+.button_collection {
+  color: white;
+  background-color: black;
+  padding: 4px 12px;
+  margin-top: 3px;
+  border: none;
+  border-radius: 10px;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nftCard_container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: aqua;
+  border-radius: 10px;
+}
+
+
+@media screen and (max-width: 1700px) {
+  .home_container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: linear-gradient(to right, black,10%, aqua, 90%, black);
   }
-  to {
-    transform: rotate(360deg);
+  .title_container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 20px;
+    width: 80%;
+  }
+  .title {
+    font-size: 25px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+  }
+  .input_wallet_collection_container {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .label_wallet, .label_collection {
+    font-size: 26px;
+    margin-bottom: 1rem;
+  }
+  .input {
+    border: none;
+    border-radius: 5px;
+    padding: 4px 8px;
+    width: 80%;
+    font-size: 16px;
+  }
+  .button_collection {
+    color: white;
+    background-color: black;
+    padding: 4px 12px;
+    margin-top: 3px;
+    border: none;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .nftCard_container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
   }
 }
