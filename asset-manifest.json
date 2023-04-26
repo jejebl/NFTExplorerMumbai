@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/NFTExplorerMumbai/static/css/main.798cf3b8.css",
-    "main.js": "/NFTExplorerMumbai/static/js/main.6d9a133c.js",
+    "main.js": "/NFTExplorerMumbai/static/js/main.a94ee5bc.js",
     "index.html": "/NFTExplorerMumbai/index.html",
     "main.798cf3b8.css.map": "/NFTExplorerMumbai/static/css/main.798cf3b8.css.map",
-    "main.6d9a133c.js.map": "/NFTExplorerMumbai/static/js/main.6d9a133c.js.map"
+    "main.a94ee5bc.js.map": "/NFTExplorerMumbai/static/js/main.a94ee5bc.js.map"
   },
   "entrypoints": [
     "static/css/main.798cf3b8.css",
-    "static/js/main.6d9a133c.js"
+    "static/js/main.a94ee5bc.js"
   ]
 }
