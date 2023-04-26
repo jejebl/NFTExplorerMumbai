@@ -17,10 +17,7 @@ function App() {
   }
 
   const fetchNFTs = async() => {
-    console.log(wallet.length);
-    console.log(collection.length);
     let nfts; 
-    console.log("fetching nfts");
     const api_key = "ppApZP_xrsh7MnIjQfte-8VLzxzAfAjX"
     let baseURL = `https://polygon-mumbai.g.alchemy.com/v2/${api_key}/getNFTs/`;
     var requestOptions = {
@@ -29,25 +26,37 @@ function App() {
      
     if (collection.length===0 && wallet.length!==0) {
       const fetchURL = `${baseURL}?owner=${wallet}`;
-      nfts = await fetch(fetchURL, requestOptions).then(data => data.json());
-      if (nfts) {
-        console.log("nfts:", nfts)
-        setNFTs(nfts.ownedNfts)
+      try {
+        nfts = await fetch(fetchURL, requestOptions).then(data => data.json());
+        if (nfts) {
+          setNFTs(nfts.ownedNfts.reverse())
+        }
+      } catch (error) {
+        setNFTs([])
       }
     } else if(collection.length!==0 && wallet.length===0) {
       baseURL = `https://polygon-mumbai.g.alchemy.com/v2/${api_key}/getNFTsForCollection/`;
       const fetchURL = `${baseURL}?contractAddress=${collection}&withMetadata=${"true"}`;
-      nfts = await fetch(fetchURL, requestOptions).then(data => data.json());
-      if(nfts){
-        setNFTs(nfts.nfts)
+      try {
+        nfts = await fetch(fetchURL, requestOptions).then(data => data.json());
+        if(nfts){
+          setNFTs(nfts.nfts.reverse())
+        } 
+      } catch (error) {
+        setNFTs([])
       }
     } else if(collection.length!==0 && wallet.length!==0){
       const fetchURL = `${baseURL}?owner=${wallet}&contractAddresses%5B%5D=${collection}`;
-      nfts= await fetch(fetchURL, requestOptions).then(data => data.json());
-      if (nfts) {
-        console.log("nfts:", nfts)
-        setNFTs(nfts.ownedNfts)
+      try {
+        nfts= await fetch(fetchURL, requestOptions).then(data => data.json());
+        if (nfts) {
+          setNFTs(nfts.ownedNfts.reverse())
+        }
+      } catch (error) {
+        setNFTs([])
       }
+    } else {
+      setNFTs([])
     }
   
   }
